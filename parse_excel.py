@@ -34,8 +34,7 @@ def parse_excel_file(excel_file_name):
     df_csv['station1'] = df_csv['station1'].apply(lambda x: int(x))
     df_csv['station2'] = df_csv['station2'].apply(lambda x: int(x))
     df_csv = df_csv[target_cols]
-    # correcting special route tariffs
-    # df_csv.loc[df_csv['station2'] == list(corr_tariff.keys())[0], 'baseTariff'] = list(corr_tariff.values())[0]
+
     return df_csv
 
 # print(parse_excel_file("C:\\Python_progs\\ТД\\Расчет ТД кукурузы-2018-2019 (тариф 2018) 30082018 для загрузки.xlsx"))
