@@ -50,11 +50,12 @@ if len(df_excel_list) > 0:
     df_diff = diff_to_baseline(df_base, df_csv_full)
     diff_file_name = path_to_excel_files + "diff.csv"
     df_diff.to_csv(diff_file_name, index=False, sep = ';', encoding='cp1251')
-    print("Добавлено записей в файл " + diff_file_name + " : " + str(df_diff.shape[0]))
+    print("Добавлено записей в файл сверки " + diff_file_name + " : " + str(df_diff.shape[0]))
     
     timestr = time.strftime("%Y%m%d-%H%M%S")
     csv_file_name = path_to_excel_files + output_file_suffix + "_" + timestr + ".csv"
     df_csv_full.to_csv(csv_file_name, index=False, sep = ';', encoding='cp1251')
-    print("Добавлено записей в файл " + csv_file_name + " : " + str(df_csv_full.shape[0]))
+    print("Добавлено записей в файл тарифов " + csv_file_name + " : " + str(df_csv_full.shape[0]))
+    print("Добавьте маршруты для сахара вручную")
 else:
     print("Не найдено Excel-файлов в директории: " + path_to_excel_files)

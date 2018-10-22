@@ -23,7 +23,7 @@ sugar_tariff = 10000
 sugar_deadline = 100
 
 FO_station = 222001
-FO_tariff = 5500
+FO_tariff = 5000
 
 zero_tariff = 0
 zero_deadline = 0
