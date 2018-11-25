@@ -33,17 +33,19 @@ if len(df_excel_list) > 0:
     # delete same-station invisible tariffs
     df_csv_full = df_csv_full[df_csv_full['station1'] != df_csv_full['station2']]
     # add zero pseudo-tariffs
-    df_zero = calc_zero_tariffs(df_csv_full)
-    df_csv_full = pd.concat([df_csv_full, df_zero], ignore_index=True)
+    #df_zero = calc_zero_tariffs(df_csv_full)
+    #df_csv_full = pd.concat([df_csv_full, df_zero], ignore_index=True)
     
     # add sugar tariffs from bt_xxx.csv
     df_sugar = df_base[df_base['commodity'] == commodity_dict['сахар']]
     df_csv_full = pd.concat([df_csv_full, df_sugar], ignore_index=True)
 
     # add Gruppirovka FO pseudo-tariffs
-    df_FO = calc_FO_tariffs(df_csv_full)
-    df_csv_full = pd.concat([df_csv_full, df_FO], ignore_index=True)
+    # df_FO = calc_FO_tariffs(df_csv_full)
+    # df_csv_full = pd.concat([df_csv_full, df_FO], ignore_index=True)
 
+    select_max_tariff(df_csv_full, 527101)
+    
     df_csv_full.sort_values(by=target_cols, inplace=True) 
     df_base.sort_values(by=target_cols, inplace=True) 
    

@@ -19,7 +19,7 @@ def parse_excel_file(excel_file_name):
             print("Нечисловое значение в поле: " + column + " файла: " + excel_file_name + "\n")
             print(df_error)
             return pd.DataFrame()
-    # check that all numbers are numbers
+    # check that all cells are not empty
     for column in df_csv.columns[1:]:
         df_error_nan = df_csv[df_csv[column].apply(np.isnan)]
         if df_error_nan.empty is False:

@@ -18,6 +18,8 @@ cols_dict = {6:'commodity_name',2:'station1',4:'station2',7:'baseTariff',5:'dist
 commodity_dict = {'пшеница':402, 'ячмень':452, 'кукуруза':453, 'сахар':454, 'соя':455}
 # Целевой порядок колонок в csv-файле
 target_cols = ['commodity','station1','station2','baseTariff','deadline']
+# Тип строк в diff-файле
+diff_type_dict = {'both':'ИЗМЕНЕНИЕ', 'right_only':'ДОБАВЛЕНИЕ', 'left_only':'УДАЛЕНИЕ'}
 
 sugar_tariff = 10000
 sugar_deadline = 100
