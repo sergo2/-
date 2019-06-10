@@ -12,6 +12,7 @@ def parse_excel_file(excel_file_name):
     # mapping commodity to its code
     df_commodity = pd.DataFrame.from_dict(commodity_dict, orient='index', columns = ['commodity'])
     df_csv = pd.merge(df_csv, df_commodity, left_on='commodity_name', right_index=True)
+    df_csv['baseTariff'] = df_csv['baseTariff'].apply(lambda x: float(x))
     # check that all numbers are numbers
     for column in df_csv.columns[1:]:
         df_error = df_csv[~df_csv[column].apply(np.isreal)]

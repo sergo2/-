@@ -38,7 +38,7 @@ if len(df_excel_list) > 0:
     df_csv_full = pd.concat([df_csv_full, df_sugar], ignore_index=True)
   
     # select route from 527101 with max tariff
-    df_csv_full = select_max_tariff(df_csv_full, 527101)
+    #df_csv_full = select_max_tariff(df_csv_full, 527101)
     
     df_csv_full.sort_values(by=target_cols, inplace=True) 
     df_base.sort_values(by=target_cols, inplace=True) 
